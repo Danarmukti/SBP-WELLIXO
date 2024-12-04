@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellixo</title>
+    <link rel="stylesheet" href="../../../main.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="">
+    <!-- <nav class="navbar-container bg-primary d-flex justify-content-center">
+      <img src="img/logo.png" class="logo-wrapper justify-content-center"></img>
+    </nav> -->
+    <!-- Header -->
+    <header class="header">
+      <h1>WELLIXO</h1>
+      <h2>Calorie Calculator</h2>
+    </header>
+
+    <!-- Content Section -->
+    <section class="container my-5">
+      <div class="content">
+        <img
+          src="../../../img/detail-page-img/2.jpg"
+          alt="Calorie Calculator"
+          class="img-fluid content-img rounded mb-4"
+        />
+        <h3>Apa itu Calorie Calculator?</h3>
+        <p>
+          Calorie Calculator adalah alat yang digunakan untuk menghitung
+          kebutuhan kalori harian berdasarkan aktivitas, umur, berat badan,
+          tinggi badan, dan jenis kelamin. Alat ini membantu Anda menentukan
+          kebutuhan energi harian untuk mencapai tujuan berat badan Anda.
+        </p>
+        <h4>Rumus Menghitung Kalori</h4>
+        <p>
+          Untuk menghitung kebutuhan kalori, Calorie Calculator biasanya
+          menggunakan Rumus Harris-Benedict yang dimodifikasi:
+        </p>
+        <p><strong>Pria:</strong></p>
+        <p>
+          <code
+            >BMR = 88.362 + (13.397 x Berat(kg)) + (4.799 x Tinggi(cm)) - (5.677
+            x Usia)</code
+          >
+        </p>
+        <p><strong>Wanita:</strong></p>
+        <p>
+          <code
+            >BMR = 447.593 + (9.247 x Berat(kg)) + (3.098 x Tinggi(cm)) - (4.330
+            x Usia)</code
+          >
+        </p>
+        <p>
+          Hasil BMR kemudian dikalikan dengan faktor aktivitas untuk mendapatkan
+          Total Daily Energy Expenditure (TDEE):
+        </p>
+        <ul>
+          <li>Sedentari (tidak aktif): BMR x 1.2</li>
+          <li>Aktivitas ringan: BMR x 1.375</li>
+          <li>Aktivitas sedang: BMR x 1.55</li>
+          <li>Aktivitas berat: BMR x 1.725</li>
+          <li>Aktivitas sangat berat: BMR x 1.9</li>
+        </ul>
+        <h4>Cara Menggunakan Hasil Perhitungan</h4>
+        <p>
+          Gunakan nilai TDEE untuk merencanakan pola makan dan mempertahankan
+          energi kalori sesuai kebutuhan Anda. Jika Anda ingin menurunkan berat
+          badan, konsumsi kalori di bawah nilai TDEE. Jika ingin menaikkan berat
+          badan, konsumsi kalori di atas nilai TDEE. Selalu konsultasikan dengan
+          ahli gizi atau dokter untuk rencana diet yang tepat.
+        </p>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter text-center">
+      <h4>Follow the latest trends</h4>
+      <p>With our daily newsletter</p>
+      <form class="d-flex justify-content-center">
+        <input
+          type="email"
+          class="form-control w-50 me-2"
+          placeholder="you@example.com"
+        />
+        <button type="submit" class="btn btn-light">Submit</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>CompanyName &copy; 2024. All rights reserved.</p>
+      <div>
+        <a href="#" class="text-white mx-2">Facebook</a>
+        <a href="#" class="text-white mx-2">Twitter</a>
+        <a href="#" class="text-white mx-2">LinkedIn</a>
+      </div>
+    </footer>
+  </body>
+</html>

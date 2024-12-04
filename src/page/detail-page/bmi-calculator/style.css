@@ -1,0 +1,32 @@
+body {
+  background-color: #fef4e8;
+}
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+.header h1 {
+  font-weight: bold;
+}
+.content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.content-img {
+  width: 100%;
+  object-fit: cover;
+  height: 375px;
+}
+.newsletter {
+  background-color: #94b564;
+  color: white;
+  padding: 40px 20px;
+}
+footer {
+  background-color: #fbbc63;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+}
