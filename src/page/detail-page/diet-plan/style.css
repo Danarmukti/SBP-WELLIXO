@@ -19,9 +19,20 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .content-img {
+  position: relative;
   width: 100%;
   object-fit: cover;
   height: 375px;
+}
+
+.content-img::after {
+  position: absolute;
+  content: "DIET ";
+  background: #000;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
 }
 
 .newsletter {
@@ -34,4 +45,10 @@ footer {
   color: white;
   padding: 20px 10px;
   text-align: center;
+}
+
+div.content p {
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 3rem;
 }

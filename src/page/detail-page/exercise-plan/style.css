@@ -35,3 +35,9 @@ footer {
   padding: 20px 10px;
   text-align: center;
 }
+
+div.content p {
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 3rem;
+}

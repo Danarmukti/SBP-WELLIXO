@@ -30,12 +30,46 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+.feature-box {
+  position: relative;
+}
+
 .feature-box img {
-  border-radius: 15px;
+  position: relative;
+  border-radius: 50px;
   width: 100%;
   object-fit: cover;
   height: 375px;
 }
+
+.feature-box h5 {
+  color: #ffdbb4;
+  position: absolute;
+  content: "";
+  width: 100%;
+  font-size: 2rem;
+  text-shadow: rgb(156, 102, 45) 1px 0px 0px,
+    rgb(156, 102, 45) 0.540302px 0.841471px 0px,
+    rgb(156, 102, 45) -0.416147px 0.909297px 0px,
+    rgb(156, 102, 45) -0.989992px 0.14112px 0px,
+    rgb(156, 102, 45) -0.653644px -0.756802px 0px,
+    rgb(156, 102, 45) 0.283662px -0.958924px 0px,
+    rgb(156, 102, 45) 0.96017px -0.279415px 0px;
+  border-radius: 0px 0px 50px 50px;
+  padding: 2rem;
+  bottom: -10px;
+}
+
+.feature-box h5:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(156, 102, 45, 1) 78%
+  );
+  transition: 0.3s all ease-in-out;
+}
+
 .newsletter {
   background-color: #94b564;
   color: white;
@@ -46,4 +80,14 @@ footer {
   color: white;
   padding: 20px 10px;
   text-align: center;
+}
+
+box-icon {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
 }
