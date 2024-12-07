@@ -18,21 +18,18 @@
     />
   </head>
   <body class="">
-    <!-- <nav class="navbar-container bg-primary d-flex justify-content-center">
-      <img src="img/logo.png" class="logo-wrapper justify-content-center"></img>
-    </nav> -->
-
     <!-- Header -->
-    <header class="container py-4 text-center">
-      <h1 class="fw-bold">WELLIXO</h1>
-      <p>Fitness, Food, Health Calculators</p>
+    <header class="py-4 text-center">
+      <img src="img/logo.png" alt="" />
     </header>
 
     <!-- Hero Section -->
     <section class="hero-section container">
       <div class="row g-4 mb-4 align-items-center">
         <div class="col-md-6">
-          <h1>Your Journey to a Fitter, Healthier You Starts Here.</h1>
+          <h2 class="fw-medium lh-1 title-jumbotron">
+            Your Journey to a Fitter, Healthier You Starts Here.
+          </h2>
         </div>
         <div class="col-md-3">
           <div class="feature-box">
@@ -72,12 +69,16 @@
         </div>
       </div>
       <div class="row g-4 d-flex flex-md-row flex-column-reverse">
-        <div class="col-md-6">
-          <p class="mb-4">
+        <div class="col-md-6 d-flex flex-column justify-content-between">
+          <p class="mb-4 lh-sm text-cta">
             Utilize our personalized diet and fitness calculators to discover
             the ideal path for your health journey.
           </p>
-          <a href="#" class="btn btn-warning btn-lg">Calculate Now!</a>
+          <div class="text-md-end calculate-wrapper">
+            <a href="#" class="btn calculate-btn btn-lg rounded-5"
+              >Calculate Now!</a
+            >
+          </div>
         </div>
         <div class="col-md-3">
           <div class="feature-box">
@@ -104,8 +105,8 @@
               ><h5 class="text-end mt-2">
                 BMI <br />
                 Calculator
-              </h5></a
-            >
+              </h5>
+            </a>
             <a class="box-link" href="page/detail-page/bmi-calculator/"
               ><box-icon
                 name="left-top-arrow-circle"
@@ -149,13 +150,13 @@
     </section> -->
 
     <!-- Newsletter Section -->
-    <section class="newsletter text-center container rounded-4 mb-5">
+    <section class="newsletter text-center container rounded-5">
       <h4>Follow the latest trends</h4>
       <p>With our daily newsletter</p>
       <form class="d-flex justify-content-center">
         <input
           type="email"
-          class="form-control w-50 me-2"
+          class="form-control w-25 me-2"
           placeholder="you@example.com"
         />
         <button type="submit" class="btn btn-light">Submit</button>
@@ -163,12 +164,36 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      <p>CompanyName &copy; 2024. All rights reserved.</p>
-      <div>
-        <a href="#" class="text-white mx-2">Facebook</a>
-        <a href="#" class="text-white mx-2">Twitter</a>
-        <a href="#" class="text-white mx-2">LinkedIn</a>
+    <footer class="py-5">
+      <div
+        class="d-flex container w-100 align-items-center justify-content-between"
+      >
+        <img
+          class="w-0"
+          src="img/logo.png"
+          style="height: 80px; object-fit: contain"
+          alt=""
+        />
+        <ul class="d-flex align-items-center">
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div style="border: 1px solid #ffff" class="container mt-3 mb-3"></div>
+      <div
+        class="d-flex container w-100 align-items-center justify-content-center mt-5"
+      >
+        <p style="color: black">WELLIXOCOMPANY @ 2024. All rights reserved.</p>
       </div>
     </footer>
   </body>

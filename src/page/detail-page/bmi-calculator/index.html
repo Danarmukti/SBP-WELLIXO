@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../../../main.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body class="">
     <!-- <nav class="navbar-container bg-primary d-flex justify-content-center">
@@ -14,25 +22,29 @@
     </nav> -->
 
     <!-- Header -->
-    <header class="header">
-      <h1>WELLIXO</h1>
-      <h2>BMI Calculator</h2>
+    <header class="py-4 text-center">
+      <img src="../../../img/logo.png" alt="" />
     </header>
 
     <!-- Content Section -->
     <section class="container my-5">
+      <h1 class="text-center">BMI Calculator</h1>
       <div class="content">
         <img
           src="../../../img/detail-page-img/1.jpg"
           alt="BMI Calculator"
-          class="img-fluid content-img rounded mb-4"
+          class="img-fluid content-img rounded-5 mb-4"
         />
         <h3>Apa itu BMI?</h3>
         <p>
-          BMI (Body Mass Index) adalah alat yang digunakan untuk menghitung
-          Indeks Massa Tubuh berdasarkan tinggi dan berat badan Anda. Ini
-          membantu menentukan apakah berat badan Anda berada dalam kisaran
-          sehat, kekurangan berat badan, atau kelebihan berat badan.
+          BBMI Calculator adalah alat yang digunakan untuk menghitung Indeks
+          Massa Tubuh (Body Mass Index/BMI). BMI adalah angka yang menunjukkan
+          apakahberat badan seseorang tergolong kurang, normal, berlebih, atau
+          obesitas berdasarkan tinggi badan dan berat badan. Alat ini sering
+          digunakan oleh tenaga medis dan masyarakat umum untuk memantau
+          kesehatan terkait berat badan. Namun, perlu diingat bahwa BMI hanya
+          memberikan gambaran umum dan tidak memperhitungkan faktor seperti
+          massa otot, lemak tubuh, atau distribusi lemak.
         </p>
         <h4>Rumus BMI</h4>
         <p>Rumus menghitung BMI sangat sederhana:</p>
@@ -44,25 +56,26 @@
         </p>
         <p>
           Misalnya, jika berat badan Anda adalah 70 kg dan tinggi badan Anda
-          adalah 1,75 meter, maka perhitungannya:
+          adalah 1,75 meter, maka perhitungannya adalah:
         </p>
         <p><code>70 / (1.75 x 1.75) = 22.86</code></p>
         <p>
-          BMI ini kemudian dibandingkan dengan kategori standar untuk mengetahui
-          status berat badan Anda.
+          Hasil BMI ini kemudian dibandingkan dengan kategori standar untuk
+          mengetahui status berat badan Anda.
         </p>
         <h4>Kategori BMI</h4>
         <ul>
-          <li><strong> 18.5:</strong> Berat badan kurang</li>
+          <li><strong> < 18.5:</strong> Berat badan kurang</li>
           <li><strong>18.5 - 24.9:</strong> Berat badan normal</li>
           <li><strong>25 - 29.9:</strong> Berat badan berlebih</li>
           <li><strong>> 30:</strong> Obesitas</li>
         </ul>
         <h4>Catatan</h4>
         <p>
-          BMI tidak dapat digunakan untuk anak-anak, atlet, atau orang dengan
-          kondisi medis tertentu. Selalu konsultasikan dengan dokter untuk
-          diagnosis kesehatan yang lebih akurat.
+          BMI tidak cocok digunakan untuk anak-anak, atlet, atau orang dengan
+          kondisi medis tertentu. Oleh karena itu, hasil BMI sebaiknya
+          dikombinasikan dengan evaluasi kesehatan lain untuk penilaian yang
+          lebih akurat.
         </p>
         <a class="btn btn-dark" style="text-decoration: none" href="../../../">
           BACK
@@ -71,13 +84,13 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter text-center container rounded-4 mb-5">
+    <section class="newsletter text-center container rounded-5">
       <h4>Follow the latest trends</h4>
       <p>With our daily newsletter</p>
       <form class="d-flex justify-content-center">
         <input
           type="email"
-          class="form-control w-50 me-2"
+          class="form-control w-25 me-2"
           placeholder="you@example.com"
         />
         <button type="submit" class="btn btn-light">Submit</button>
@@ -85,12 +98,36 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      <p>CompanyName &copy; 2024. All rights reserved.</p>
-      <div>
-        <a href="#" class="text-white mx-2">Facebook</a>
-        <a href="#" class="text-white mx-2">Twitter</a>
-        <a href="#" class="text-white mx-2">LinkedIn</a>
+    <footer class="py-5">
+      <div
+        class="d-flex container w-100 align-items-center justify-content-between"
+      >
+        <img
+          class="w-0"
+          src="../../../img/logo.png"
+          style="height: 80px; object-fit: contain"
+          alt=""
+        />
+        <ul class="d-flex align-items-center">
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div style="border: 1px solid #ffff" class="container mt-3 mb-3"></div>
+      <div
+        class="d-flex container w-100 align-items-center justify-content-center mt-5"
+      >
+        <p style="color: black">WELLIXOCOMPANY @ 2024. All rights reserved.</p>
       </div>
     </footer>
   </body>

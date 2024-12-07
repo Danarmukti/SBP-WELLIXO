@@ -2,9 +2,27 @@
 * {
   font-family: "Lexend", sans-serif;
 }
+:root {
+  --primary-color: #758543;
+  --secondary-color: #ffb768;
+  --tertiary-color: #364212;
+  --quaternary-color: #9c662d;
+  --bg-color: #fff6ed;
+  --text-light: #ffdbb4;
+}
 body {
   background-color: #fef4e8;
 }
+header {
+  width: 100%;
+}
+
+header img {
+  width: 100%;
+  object-fit: contain;
+  height: 89px;
+}
+
 .header {
   text-align: center;
   padding: 40px 20px;
@@ -13,13 +31,11 @@ body {
   font-weight: bold;
 }
 .content {
-  background-color: white;
-  padding: 40px;
+  background-color: var(--bg-color);
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0px 40px;
 }
 .content-img {
-  position: relative;
   width: 100%;
   object-fit: cover;
   height: 375px;
@@ -36,10 +52,22 @@ body {
 }
 
 .newsletter {
-  background-color: #94b564;
+  background-color: var(--primary-color);
   color: white;
-  padding: 40px 20px;
+  padding: 6rem;
+  margin-bottom: 7rem;
 }
+
+.newsletter h4 {
+  color: var(--tertiary-color);
+}
+
+.newsletter form button {
+  border: 0px;
+  background: var(--tertiary-color);
+  color: var(--bg-color);
+}
+
 footer {
   background-color: #fbbc63;
   color: white;
@@ -47,6 +75,16 @@ footer {
   text-align: center;
 }
 
+footer ul {
+  list-style-type: none;
+  height: 50px;
+  gap: 3rem;
+}
+
+footer ul li i {
+  color: rgb(31, 29, 29);
+  font-size: 1.5rem;
+}
 div.content p {
   font-weight: 400;
   text-align: justify;
