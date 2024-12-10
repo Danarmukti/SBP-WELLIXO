@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,71 +20,118 @@
     <!-- <nav class="navbar-container bg-primary d-flex justify-content-center">
       <img src="img/logo.png" class="logo-wrapper justify-content-center"></img>
     </nav> -->
-    <div class="container mt-5">
-      <div class="card">
-        <div class="card-header">
-          <h1 class="text-center">WELLIXO Fit Calculator</h1>
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="units" class="form-label">Units</label>
-              <select class="form-select" id="units">
-                <option>Metric</option>
-                <option>Imperial</option>
-              </select>
+    <!-- Header -->
+    <header class="py-4 text-center">
+      <img src="../../img/logo.png" alt="" />
+    </header>
+
+    <!-- Content Section -->
+    <section
+      class="newsletter d-flex flex-column align-items-center container rounded-5"
+    >
+      <head>
+        <h3>Fit Calculator</h3>
+      </head>
+      <section class="d-flex input-wrapper w-50">
+        <div class="">
+          <main class="input-container d-flex flex-column text-dark w-100">
+            <h6 class="fw-medium">Units</h6>
+            <div
+              class="bg-primary d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+            >
+              <div>US</div>
+              <div>METRIC</div>
             </div>
-            <div class="row">
-              <div class="col">
-                <label for="gender" class="form-label">Gender</label>
-                <select class="form-select" id="gender">
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" />
-              </div>
-              <div class="col">
-                <label for="height" class="form-label">Height</label>
-                <input type="number" class="form-control" id="height" />
-              </div>
-              <div class="col">
-                <label for="weight" class="form-label">Weight</label>
-                <input type="number" class="form-control" id="weight" />
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="activityLevel" class="form-label"
-                >Activity Level</label
-              >
-              <select class="form-select" id="activityLevel">
-                <option>Sedentary</option>
-                <option>Lightly Active</option>
-                <option>Moderately Active</option>
-                <option>Very Active</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Calculate</button>
-          </form>
+          </main>
         </div>
-        <div class="card-footer">
-          <h2 class="text-center">Results</h2>
-          <ul class="list-group">
-            <li class="list-group-item">BMI: <span id="bmi"></span></li>
-            <li class="list-group-item">
-              Calories: <span id="calories"></span>
-            </li>
-            <li class="list-group-item">
-              Diet Plan: <span id="dietPlan"></span>
-            </li>
-            <li class="list-group-item">
-              Exercise Plan: <span id="exercisePlan"></span>
-            </li>
-          </ul>
+
+        <div>
+          <main class="input-container d-flex flex-column text-dark w-100">
+            <h6 class="fw-medium">Units</h6>
+            <div
+              class="bg-primary d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+            >
+              <div>US</div>
+              <div>METRIC</div>
+            </div>
+          </main>
         </div>
+      </section>
+
+      <form class="d-flex justify-content-center">
+        <input
+          type="email"
+          class="form-control w-25 me-2"
+          placeholder="you@example.com"
+        />
+        <button type="submit" class="btn btn-light">Submit</button>
+      </form>
+    </section>
+
+    <section
+      class="result-section container d-flex flex-column justify-content-center align-items-center bg-primary mb-4"
+    >
+      <h3 class="w-75">Result</h3>
+      <ul class="w-75">
+        <li class="result-btn">BMI</li>
+        <li class="result-btn">CALORIE</li>
+        <li class="result-btn">DIET PLAN</li>
+        <li class="result-btn">EXERCISE PLAN</li>
+      </ul>
+      <a
+        class="btn btn-dark"
+        style="text-decoration: none"
+        href="../../../src/"
+      >
+        BACK
+      </a>
+    </section>
+
+    <section class="newsletter text-center container rounded-5">
+      <h4>Follow the latest trends</h4>
+      <p>With our daily newsletter</p>
+      <form class="d-flex justify-content-center">
+        <input
+          type="email"
+          class="form-control w-25 me-2"
+          placeholder="you@example.com"
+        />
+        <button type="submit" class="btn btn-light">Submit</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div
+        class="d-flex container w-100 align-items-center justify-content-between"
+      >
+        <img
+          class="w-0"
+          src="../../img/logo.png"
+          style="height: 80px; object-fit: contain"
+          alt=""
+        />
+        <ul class="d-flex align-items-center">
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+        </ul>
       </div>
-    </div>
+      <div style="border: 1px solid #ffff" class="container mt-3 mb-3"></div>
+      <div
+        class="d-flex container w-100 align-items-center justify-content-center mt-5"
+      >
+        <p style="color: black">WELLIXOCOMPANY @ 2024. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

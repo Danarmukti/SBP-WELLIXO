@@ -15,6 +15,21 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <!-- KaTeX CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    />
+    <!-- KaTeX JavaScript -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body);"
+    ></script>
   </head>
   <body class="">
     <!-- <nav class="navbar-container bg-primary d-flex justify-content-center">
@@ -49,16 +64,20 @@
         <h4>Rumus BMI</h4>
         <p>Rumus menghitung BMI sangat sederhana:</p>
         <p>
-          <strong
-            >BMI = Berat Badan (kg) / (Tinggi Badan (m) x Tinggi Badan
-            (m))</strong
-          >
+          <strong style="font-family: sans-serif">
+            \( \text{BMI} = \LARGE\frac{ Berat Badan(kg) }{Tinggi Badan(m)^2} \)
+          </strong>
         </p>
         <p>
           Misalnya, jika berat badan Anda adalah 70 kg dan tinggi badan Anda
           adalah 1,75 meter, maka perhitungannya adalah:
         </p>
-        <p><code>70 / (1.75 x 1.75) = 22.86</code></p>
+        <p>
+          <strong>
+            \( \text{BMI} = \LARGE \frac{70}{1.75 \times 1.75} =
+            \frac{70}{3.0625} = 22.86 \)
+          </strong>
+        </p>
         <p>
           Hasil BMI ini kemudian dibandingkan dengan kategori standar untuk
           mengetahui status berat badan Anda.
