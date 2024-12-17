@@ -6,7 +6,7 @@
     <title>Wellixo</title>
     <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -29,9 +29,9 @@
     <section
       class="newsletter d-flex flex-column align-items-center container rounded-5"
     >
-      <head>
-        <h3>Fit Calculator</h3>
-      </head>
+      <nav class="w-50 mb-4">
+        <h3 class="">Fit Calculator</h3>
+      </nav>
       <section class="d-flex input-wrapper w-50">
         <div class="me-5">
           <main class="input-container d-flex flex-column text-dark w-100">
@@ -64,7 +64,7 @@
       <section class="d-flex input-wrapper w-50">
         <div class="me-5">
           <main class="input-container d-flex flex-column text-dark w-100">
-            <h6 class="fw-medium">Units</h6>
+            <h6 class="fw-medium">Age</h6>
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
@@ -78,7 +78,7 @@
 
         <div class="me-5">
           <main class="input-container text-dark w-100">
-            <h6 class="fw-medium">Gender</h6>
+            <h6 class="fw-medium">Height</h6>
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
@@ -90,7 +90,7 @@
         </div>
         <div>
           <main class="input-container text-dark w-100">
-            <h6 class="fw-medium">Gender</h6>
+            <h6 class="fw-medium">Weight</h6>
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
@@ -103,66 +103,291 @@
       </section>
 
       <section class="d-flex input-wrapper w-50">
-        <div class="me-5">
+        <div class="me-5 activity-container">
           <main class="input-container d-flex flex-column text-dark w-100">
-            <h6 class="fw-medium">Units</h6>
+            <h6 class="fw-medium">Acivity level</h6>
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <div class="btn-switch-toggle1"></div>
-
-              <button class="btn-switch px-4">US</button>
-              <button class="btn-switch px-4">Metric</button>
+              <div class="btn-switch-toggle3"></div>
+              <button class="btn-switch px-4">Sedentary</button>
+              <button class="btn-switch px-4">Moderate</button>
+              <button class="btn-switch px-4">Active</button>
             </div>
           </main>
         </div>
 
-        <div class="me-5">
-          <main class="input-container text-dark w-100">
-            <h6 class="fw-medium">Gender</h6>
-            <div
-              class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
-            >
-              <div class="btn-switch-toggle2"></div>
-              <button class="btn-switch px-4">Men</button>
-              <button class="btn-switch px-4">Women</button>
-            </div>
-          </main>
-        </div>
         <div>
           <main class="input-container text-dark w-100">
-            <h6 class="fw-medium">Gender</h6>
             <div
-              class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+              class="btn-container btn-calculate-container d-flex justify-content-between text-dark w-100 rounded-5 px-5 py-2"
             >
-              <div class="btn-switch-toggle2"></div>
-              <button class="btn-switch px-4">Men</button>
-              <button class="btn-switch px-4">Women</button>
+              <button class="btn-calculate">Calculate</button>
             </div>
           </main>
         </div>
       </section>
-
-      <form class="d-flex justify-content-center">
-        <input
-          type="email"
-          class="form-control w-25 me-2"
-          placeholder="you@example.com"
-        />
-        <button type="submit" class="btn btn-light">Submit</button>
-      </form>
     </section>
 
     <section
-      class="result-section container d-flex flex-column justify-content-center align-items-center bg-primary mb-4"
+      class="result-section container d-flex flex-column justify-content-center align-items-center bg-primary"
     >
       <h3 class="w-75">Result</h3>
-      <ul class="w-75">
-        <li class="result-btn">BMI</li>
-        <li class="result-btn">CALORIE</li>
-        <li class="result-btn">DIET PLAN</li>
-        <li class="result-btn">EXERCISE PLAN</li>
-      </ul>
+      <!-- <ul class="w-75">
+        <li>
+          <div class="result-btn">BMI</div>
+          <div class="bmi-container">
+            <div class="bmi-bar">
+              <span class="bmi-value">20.4</span>
+            </div>
+            <p class="mt-5">
+              Your BMI is <strong>20.4 kg/m<sup>2</sup></strong> and it's
+              <span style="color: #0be881; font-weight: bold">Normal</span>.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="result-btn accordion">Calorie</div>
+          <div class="container">
+            <h6 class="text-center">This is how much you need to eat a day:</h6>
+            <div class="row mt-4">
+              <div class="col-md-6 border text-center mb-2 mb-md-0 rounded-4">
+                <button class="btn btn-primary btn-block">
+                  Maintain Weight
+                </button>
+              </div>
+              <div class="col-md-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">1.717</h5>
+                    <p class="card-text">Calories/day</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-6 border text-center mb-2 mb-md-0 rounded-4">
+                <button class="btn btn-primary btn-block">Lose Weight</button>
+              </div>
+              <div class="col-md-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">1.500</h5>
+                    <p class="card-text">Calories/day</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-6 border text-center mb-2 mb-md-0 rounded-4">
+                <button class="btn btn-primary btn-block">Gain Weight</button>
+              </div>
+              <div class="col-md-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">1.900</h5>
+                    <p class="card-text">Calories/day</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="result-btn">Exercise plan</div>
+          <div class="container">
+            <h6 class="text-center mb-4 text-center">
+              We recommend you this exercise to keep healthy:
+            </h6>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4 text-center">
+                  <h5>Moderate-Intensity Cardio</h5>
+                  <p>Cycling or Swimming</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4 text-center">
+                  <h5>Jogging or Brisk Walking</h5>
+                  <p>30 minutes</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4 text-center">
+                  <h5>Flexibility Activities</h5>
+                  <p>Yoga or Pilates</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb text-center">
+                  <h5>Strength Training</h5>
+                  <p>Weight Lifting or Bodyweight Exercises</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul> -->
+
+      <div class="accordion" id="accordionExample">
+        <div>
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button result-btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              BMI
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body"></div>
+          </div>
+        </div>
+        <div>
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button result-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Calorie
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div class="container">
+                <h6 class="text-center">
+                  This is how much you need to eat a day:
+                </h6>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Maintain Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">1.717</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Lose Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">1.500</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Gain Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">1.900</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button result-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Exercise plan
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div class="container">
+                <h6 class="text-center mb-4 text-center">
+                  We recommend you this exercise to keep healthy:
+                </h6>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card mb-4 text-center">
+                      <h5>Moderate-Intensity Cardio</h5>
+                      <p>Cycling or Swimming</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-4 text-center">
+                      <h5>Jogging or Brisk Walking</h5>
+                      <p>30 minutes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card mb-4 text-center">
+                      <h5>Flexibility Activities</h5>
+                      <p>Yoga or Pilates</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb text-center">
+                      <h5>Strength Training</h5>
+                      <p>Weight Lifting or Bodyweight Exercises</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <a
         class="btn btn-dark"
         style="text-decoration: none"
