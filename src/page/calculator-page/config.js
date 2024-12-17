@@ -69,7 +69,7 @@ sedentary.addEventListener("click", () => {
 // when moderate unit click then indicator move into moderate
 moderate.addEventListener("click", () => {
   unitToggle3.style.width = "145px";
-  unitToggle3.style.left = "123px";
+  unitToggle3.style.left = "130px";
   unitToggle3.style.transition = "0.3s all ease-in-out";
 });
 
@@ -77,7 +77,7 @@ moderate.addEventListener("click", () => {
 // when actifity unit click then indicator move into actifity
 actifity.addEventListener("click", () => {
   unitToggle3.style.width = "110px";
-  unitToggle3.style.left = "255px";
+  unitToggle3.style.left = "275px";
   unitToggle3.style.transition = "0.3s all ease-in-out";
 });
 // ACTIVITY INTERACTIVE
