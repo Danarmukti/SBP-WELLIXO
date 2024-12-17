@@ -29,17 +29,17 @@
 
     <!-- Content Section -->
     <section
-      class="newsletter d-flex flex-column align-items-center container rounded-5"
+      class="newsletter d-flex flex-column align-items-md-center container py-5 px-md-5 px-3 rounded-5"
     >
       <nav class="w-50 mb-4">
         <h3 class="">Fit Calculator</h3>
       </nav>
-      <section class="d-flex input-wrapper w-50">
-        <div class="me-5">
-          <main class="input-container d-flex flex-column text-dark w-100">
+      <section class="d-flex input-wrapper flex-column flex-md-row w-50">
+        <div class="me-md-5 me-2">
+          <main class="input-container d-flex flex-column text-dark ">
             <h6 class="fw-medium">Units</h6>
             <div
-              class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+              class="btn-container d-flex justify-content-between text-dark w-100  rounded-4 p-2"
             >
               <div class="btn-switch-toggle1"></div>
 
@@ -63,8 +63,8 @@
         </div>
       </section>
 
-      <section class="d-flex input-wrapper w-50">
-        <div class="me-5">
+      <section class="d-flex input-wrapper justify-content-center ">
+        <div class="me-md-5 me-2">
           <main class="input-container d-flex flex-column text-dark w-100">
             <h6 class="fw-medium">Age</h6>
             <div
@@ -72,30 +72,32 @@
             >
               <input id="age" type="number" class=" btn-switch "></input>
         
-              <button class="btn-switch px-4">y.o</button>
+              <button class="btn-switch ">y.o</button>
             </div>
           </main>
         </div>
 
-        <div class="me-5">
-          <main class="input-container d-flex flex-md-column text-dark w-100">
+        <div class="me-md-5 me-2">
+          <main class="input-container d-flex flex-column text-dark w-100">
             <h6 class="fw-medium">Height</h6>
             <div
-              class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+            id="usmeter"
+              class="d-none btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
               <input id="cm" type="number" class=" btn-switch "></input>
         
               <button  class="btn-switch ">cm</button>
             </div>
             <div
-              class="d-none btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+            id="metricmeter"
+              class=" btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
               <input id="feet" type="number" class=" btn-switch "></input>
         
               <button class="btn-switch px-0">feet</button>
-              <input type="number" class=" btn-switch "></input>
+              <input id="inch" type="number" class=" btn-switch "></input>
         
-              <button id="inch" class="btn-switch ">inches</button>
+              <button  class="btn-switch ">inches</button>
             </div>
           </main>
         </div>
@@ -105,9 +107,9 @@
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input type="number" class=" btn-switch "></input>
+              <input id="kg" type="number" class=" btn-switch "></input>
         
-              <button id="kg" class="btn-switch ">Kg</button>
+              <button  class="btn-switch ">Kg</button>
             </div>
             <div
               class="d-none d-flex justify-content-between text-dark w-100 rounded-4 p-2"
@@ -120,12 +122,12 @@
         </div>
       </section>
 
-      <section class="d-flex input-wrapper w-50">
+      <section class="d-flex flex-column flex-md-row input-wrapper ">
         <div class="me-5 activity-container">
           <main class="input-container d-flex flex-column text-dark w-100">
             <h6 class="fw-medium">Acivity level</h6>
             <div
-              class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
+              class="btn-container d-flex justify-content-between text-dark w-md-100  rounded-4 p-2"
             >
               <div class="btn-switch-toggle3"></div>
               <button id="sedentarybtn" class="btn-switch px-4">Sedentary</button>
@@ -136,11 +138,11 @@
         </div>
 
         <div>
-          <main class="input-container text-dark w-100">
+          <main class="input-container  text-dark w-100">
             <div
-              class="btn-container btn-calculate-container d-flex justify-content-between text-dark w-100 rounded-5 px-5 py-2"
+              class="btn-container btn-calculate-container d-flex justify-content text-dark w-100 rounded-5 px-5 py-2"
             >
-              <button id="calculate" class="btn-calculate">Calculate</button>
+              <button id="calculateCalorie" class="btn-calculate w-100">Calculate</button>
             </div>
           </main>
         </div>
@@ -415,7 +417,7 @@
       </a>
     </section>
 
-    <section class="newsletter text-center container rounded-5">
+    <section class="newsletter py-5 text-center container rounded-5">
       <h4>Follow the latest trends</h4>
       <p>With our daily newsletter</p>
       <form class="d-flex justify-content-center">
@@ -429,9 +431,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
+    <footer class="py-5 d-flex flex-column">
       <div
-        class="d-flex container w-100 align-items-center justify-content-between"
+        class="d-flex flex-column flex-md-row container w-100 align-items-center justify-content-between"
       >
         <img
           class="w-0"
@@ -439,7 +441,8 @@
           style="height: 80px; object-fit: contain"
           alt=""
         />
-        <ul class="d-flex align-items-center">
+        <ul class="d-flex mt-5
+        mt-md-0 align-items-center">
           <li>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
           </li>

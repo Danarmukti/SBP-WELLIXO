@@ -53,7 +53,7 @@ header img {
 .btn-switch-toggle1 {
   position: absolute;
   background: var(--btn-switch);
-  width: 85px;
+  width: 5.5rem;
   height: 40%;
   padding: 2rem 2rem 0.7rem 0rem;
   top: 0px;
@@ -98,7 +98,6 @@ header img {
 .newsletter {
   background-color: var(--primary-color);
   color: white;
-  padding: 3rem;
   margin-bottom: 3rem;
 }
 
