@@ -57,7 +57,7 @@ header img {
   height: 40%;
   padding: 2rem 2rem 0.7rem 0rem;
   top: 0px;
-  left: 0;
+  left: 0px;
   bottom: 0;
   right: 0;
   border-radius: 15px;
@@ -89,7 +89,7 @@ header img {
 }
 
 .btn-container .btn-switch {
-  z-index: 2;
+  z-index: 0;
   color: black;
   border: 0px solid;
   background: #36421200;
@@ -122,6 +122,11 @@ header img {
   color: var(--bg-color);
   border: 0px solid;
   background: #36421200;
+}
+div input.btn-switch {
+  z-index: 1;
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .activity-container {
@@ -246,4 +251,8 @@ div.content p {
 
 .accordion-item {
   margin-bottom: 1rem;
+}
+
+.accordion-button:focus {
+  background: var(--secondary-color);
 }
