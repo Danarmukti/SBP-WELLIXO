@@ -9,6 +9,7 @@
   --quaternary-color: #9c662d;
   --bg-color: #fff6ed;
   --text-light: #ffdbb4;
+  --btn-switch: #3b4b52;
 }
 body {
   background-color: var(--bg-color);
@@ -41,6 +42,45 @@ header img {
   width: 100%;
   object-fit: cover;
   height: 375px;
+}
+
+.btn-container {
+  background: var(--bg-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.btn-switch-toggle1 {
+  position: absolute;
+  background: var(--btn-switch);
+  width: 85px;
+  height: 40%;
+  padding: 2rem 2rem 0.7rem 0rem;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+}
+
+.btn-switch-toggle2 {
+  position: absolute;
+  background: var(--btn-switch);
+  width: 100px;
+  height: 30%;
+  padding: 2rem 2rem 0.7rem 2rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+}
+
+.btn-container .btn-switch {
+  z-index: 2;
+  color: black;
+  border: 0px solid;
+  background: #36421200;
 }
 
 .newsletter {
