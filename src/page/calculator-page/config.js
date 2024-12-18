@@ -133,33 +133,133 @@ actifity.addEventListener("click", () => {
 });
 // ACTIVITY INTERACTIVE
 
-let pounds = document.getElementById("pounds");
+let pounds = parseFloat(document.getElementById("pounds"));
 let kg = document.getElementById("kg");
 let cm = document.getElementById("cm");
-let inchNumber = document.getElementById("inch");
+let inchNumber = parseFloat(document.getElementById("inch"));
 let age = document.getElementById("age");
-let feet = document.getElementById("feet");
+let feet = parseFloat(document.getElementById("feet"));
+let inch = inchNumber.value;
+
+let inches = feet.value + inch / 12;
+
+// var keterangan
+const bmi = document.querySelector(".bmi-content");
+const calorie = document.querySelector(".calorie-content");
+const exercise = document.querySelector(".exercise-content");
+
+const bar = document.querySelector(".bmi-value");
+
+let bmiContent = ``;
+let exerciseContent = ``;
+let calorieContent = ``;
 
 // CALCULATE
 calculate.addEventListener("click", function () {
-  let inch = inchNumber.value;
   if (unitsmeter === "us") {
-    if (inch == "" && feet.value == "" && age.value == "") {
+    if (inch == 0 && feet.value == 0 && age.value == 0 && pounds.value == 0) {
       alert("masukan angka");
       console.log("us");
+    } else {
+      bmiCalculate();
+      bmrCalculate();
+      tdee();
     }
   }
   if (unitsmeter === "metric") {
-    if (pounds.value == "" && cm.value == "" && age.value == "") {
+    if (kg.value == 0 && cm.value == 0 && age.value == 0) {
       alert("masukan angka");
       console.log("metric");
+    } else {
+      bmiCalculate();
+      bmrCalculate();
+      tdee();
+
+      bmiContent = `
+            <div class="bmi-container">
+            <div class="bmi-bar">
+              <span class="bmi-value">${parseFloat(bmiResult).toFixed(2)}</span>
+            </div>
+            <p class="mt-5">
+              Your BMI is <strong>${parseFloat(bmiResult).toFixed(
+                2
+              )}/m<sup>2</sup></strong> and it's
+              <span style="color: #0be881; font-weight: bold">Normal</span>.
+            </p>
+          </div>`;
+
+      calorieContent = `<div class="container">
+                <h6 class="text-center">
+                  This is how much you need to eat a day:
+                </h6>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Gain Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                        <h5 class="card-title">${parseFloat(
+                          tdeeResult + 500
+                        ).toFixed(2)}</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Maintain Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">${parseFloat(tdeeResult).toFixed(
+                          2
+                        )}</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div
+                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                  >
+                    <button class="btn btn-primary btn-block">
+                      Lose Weight
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                        <h5 class="card-title">${
+                          parseFloat(tdeeResult).toFixed(2) - 300
+                        }</h5>
+                        <p class="card-text">Calories/day</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+
+      bmi.innerHTML = bmiContent;
+      calorie.innerHTML = calorieContent;
     }
   }
-  bmrCalculate();
-  tdee();
 });
 
-let bmrResult;
+let bmrResult = 0.0;
 
 //formula metric
 /*  Pria:
@@ -181,8 +281,7 @@ BMR=655+(4.35×berat (lb))+(4.7×tinggi (in))−(4.7×usia)
 function bmrCalculate() {
   if (unitsmeter == "us") {
     if (gendereveal == "men") {
-      bmrResult = 66 + 6.23 * pounds.value + 12.7 * inch - 6.8 * age.value;
-      console.log(bmrResult);
+      bmrResult = 66 + 6.23 * pounds.value + 12.7 * inches - 6.8 * age.value;
     }
   }
   if (unitsmeter == "metric") {
@@ -193,8 +292,8 @@ function bmrCalculate() {
   }
   if (unitsmeter == "us") {
     if (gendereveal == "female") {
-      bmrResult = 655 + 6.23 * pounds.value + 4.7 * inch - 4.7 * age.value;
-      console.log(bmrResult);
+      bmrResult = 655 + 6.23 * pounds.value + 4.7 * inches - 4.7 * age.value;
+      console.log(parseInt(bmrResult));
     }
   }
   if (unitsmeter == "metric") {
@@ -203,15 +302,53 @@ function bmrCalculate() {
       console.log(bmrResult);
     }
   }
-  return bmrResult;
+
+  return parseInt(bmrResult);
 }
+
+// function bmrCalculate() {
+//   if (unitsmeter == "us") {
+//     if (gendereveal == "men") {
+//       bmrResult = parseFloat(
+//         66 + 6.23 * pounds.value + 12.7 * inches - 6.8 * age.value
+//       );
+//     }
+//     if (gendereveal == "Female") {
+//       if (isNaN(pounds.value) || isNaN(inches) || isNaN(age.value)) {
+//         console.log("Invalid input values. Please enter valid numbers.");
+//         return;
+//       }
+//       bmrResult = parseFloat(
+//         655 + 6.23 * pounds.value + 4.7 * inches - 4.7 * age.value
+//       );
+//     }
+//     console.log(parseFloat(bmrResult));
+//   }
+//   if (unitsmeter == "metric") {
+//     if (gendereveal == "men") {
+//       if (isNaN(kg.value) || isNaN(cm.value) || isNaN(age.value)) {
+//         console.log("Invalid input values. Please enter valid numbers.");
+//         return;
+//       }
+//       bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value + 5;
+//     }
+//     if (gendereveal == "Female") {
+//       if (isNaN(kg.value) || isNaN(cm.value) || isNaN(age.value)) {
+//         console.log("Invalid input values. Please enter valid numbers.");
+//         return;
+//       }
+//       bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value;
+//     }
+//     console.log(bmrResult);
+//   }
+//   return bmrResult;
+// }
 
 let tdeeResult;
 
 function tdee() {
   if (actifityname == "sedentary") {
     tdeeResult = bmrResult * 1.2;
-    console.log(tdeeResult);
   } else if (actifityname == "moderate") {
     tdeeResult = bmrResult * 1.55;
     console.log(tdeeResult);
@@ -219,12 +356,21 @@ function tdee() {
     tdeeResult = bmrResult * 1.9;
     console.log(tdeeResult);
   }
-  return tdeeResult;
+  return parseFloat(tdeeResult);
 }
+
+let bmiResult;
 
 function bmiCalculate() {
   if (unitsmeter == "us") {
+    bmiResult = (parseFloat(pounds.value) * 703) / inches ** 2;
+    console.log(bmiResult);
+  } else if (unitsmeter == "metric") {
+    bmiResult = kg.value / (cm.value / 100) ** 2;
+    console.log(bmiResult);
   } else {
+    alert("Invalid");
   }
+  return bmiResult;
 }
 // CALCULATE

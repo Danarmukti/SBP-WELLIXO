@@ -70,7 +70,7 @@
             <div
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input id="age" type="number" class=" btn-switch "></input>
+              <input id="age" type="number" value="0" class=" btn-switch "></input>
         
               <button class="btn-switch ">y.o</button>
             </div>
@@ -84,7 +84,7 @@
             id="metricmeter"
               class="d-none btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input id="cm" type="number" class=" btn-switch "></input>
+              <input id="cm" type="number" value="0" class=" btn-switch "></input>
         
               <button  class="btn-switch ">cm</button>
             </div>
@@ -92,12 +92,12 @@
             id="usmeter"
               class=" btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input id="feet" type="number" class=" btn-switch "></input>
+              <input id="feet" type="number" value="0" class=" btn-switch "></input>
         
               <button class="btn-switch px-0">feet</button>
-              <input id="inch" type="number" class=" btn-switch "></input>
+              <input id="inch" type="number" value="0" class=" btn-switch "></input>
         
-              <button  class="btn-switch ">inches</button>
+              <button  class="btn-switch  " >inches</button>
             </div>
           </main>
         </div>
@@ -108,7 +108,7 @@
             id="kgmeter"
               class="d-none btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input id="kg" type="number" class=" btn-switch "></input>
+              <input id="kg" type="number" value="0" class=" btn-switch "></input>
         
               <button  class="btn-switch ">Kg</button>
             </div>
@@ -116,7 +116,7 @@
             id="poundmeter"
               class="btn-container d-flex justify-content-between text-dark w-100 rounded-4 p-2"
             >
-              <input id="pounds" type="number" class="btn-switch"></input>
+              <input id="pounds" type="number" value="0" class="btn-switch"></input>
         
               <button class="btn-switch">pounds</button>
             </div>
@@ -272,7 +272,9 @@
             class="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body"></div>
+            <div class="accordion-body bmi-content">
+                
+            </div>
           </div>
         </div>
         <div>
@@ -293,8 +295,8 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
-              <div class="container">
+            <div class="accordion-body calorie-content">
+              <!-- <div class="container">
                 <h6 class="text-center">
                   This is how much you need to eat a day:
                 </h6>
@@ -349,7 +351,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -371,7 +373,7 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div class="accordion-body exercise-content">
               <div class="container">
                 <h6 class="text-center mb-4 text-center">
                   We recommend you this exercise to keep healthy:
