@@ -255,3 +255,19 @@ div.content p {
 .accordion-button:focus {
   background: var(--secondary-color);
 }
+
+.animate {
+  transform: translateY(0px);
+  animation: fadein 1.5s ease-in-out;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

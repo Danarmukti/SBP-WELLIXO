@@ -1,0 +1,124 @@
+{
+  "pertanyaan": [
+    {
+      "kategori": "BMI",
+      "pertanyaan": [
+        {
+          "id": 1,
+          "pertanyaan": "Berapa berat badan Anda dalam kilogram?",
+          "tipe": "angka",
+          "satuan": "kg"
+        },
+        {
+          "id": 2,
+          "pertanyaan": "Berapa tinggi badan Anda dalam sentimeter?",
+          "tipe": "angka",
+          "satuan": "cm"
+        }
+      ]
+    },
+    {
+      "kategori": "Asupan Kalori",
+      "pertanyaan": [
+        {
+          "id": 3,
+          "pertanyaan": "Berapa usia Anda?",
+          "tipe": "angka",
+          "satuan": "tahun"
+        },
+        {
+          "id": 4,
+          "pertanyaan": "Apa jenis kelamin Anda?",
+          "tipe": "pilihan",
+          "opsi": ["Laki-laki", "Perempuan", "Lainnya"]
+        },
+        {
+          "id": 5,
+          "pertanyaan": "Seberapa aktif Anda?",
+          "tipe": "pilihan",
+          "opsi": [
+            "Tidak aktif (sedikit atau tidak ada olahraga)",
+            "Sedikit aktif (olahraga ringan 1-3 hari/minggu)",
+            "Cukup aktif (olahraga sedang 3-5 hari/minggu)",
+            "Sangat aktif (olahraga berat 6-7 hari/minggu)",
+            "Ekstra aktif (olahraga sangat berat atau pekerjaan fisik berat)"
+          ]
+        },
+        {
+          "id": 6,
+          "pertanyaan": "Apa tujuan Anda? Menurunkan, mempertahankan, atau menambah berat badan?",
+          "tipe": "pilihan",
+          "opsi": [
+            "Menurunkan berat badan",
+            "Mempertahankan berat badan",
+            "Menambah berat badan"
+          ]
+        }
+      ]
+    },
+    {
+      "kategori": "Rencana Diet",
+      "pertanyaan": [
+        {
+          "id": 7,
+          "pertanyaan": "Apakah Anda memiliki preferensi diet tertentu?",
+          "tipe": "pilihan",
+          "opsi": [
+            "Vegetarian",
+            "Vegan",
+            "Keto",
+            "Paleo",
+            "Tidak ada",
+            "Lainnya"
+          ]
+        },
+        {
+          "id": 8,
+          "pertanyaan": "Apakah Anda memiliki alergi atau intoleransi makanan?",
+          "tipe": "teks"
+        },
+        {
+          "id": 9,
+          "pertanyaan": "Berapa kali Anda biasanya makan dalam sehari?",
+          "tipe": "angka",
+          "satuan": "kali"
+        }
+      ]
+    },
+    {
+      "kategori": "Rencana Latihan",
+      "pertanyaan": [
+        {
+          "id": 10,
+          "pertanyaan": "Jenis olahraga apa yang Anda sukai?",
+          "tipe": "pilihan",
+          "opsi": [
+            "Kardio",
+            "Latihan Kekuatan",
+            "Yoga",
+            "Pilates",
+            "Campuran",
+            "Lainnya"
+          ]
+        },
+        {
+          "id": 11,
+          "pertanyaan": "Berapa hari dalam seminggu Anda bisa berolahraga?",
+          "tipe": "angka",
+          "satuan": "hari"
+        },
+        {
+          "id": 12,
+          "pertanyaan": "Berapa lama setiap sesi olahraga bisa berlangsung?",
+          "tipe": "angka",
+          "satuan": "menit"
+        },
+        {
+          "id": 13,
+          "pertanyaan": "Apakah Anda memiliki keterbatasan fisik atau cedera?",
+          "tipe": "teks"
+        }
+      ]
+    }
+  ]
+}
