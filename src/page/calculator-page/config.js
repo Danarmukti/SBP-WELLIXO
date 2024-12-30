@@ -175,6 +175,22 @@ calculate.addEventListener("click", function () {
       bmrCalculate();
       tdee();
 
+      let category = "";
+      let textColor = "";
+      if (bmiResult < 18.5) {
+        category = "Berat badan kurang";
+        textColor = "red";
+      } else if (bmiResult >= 18.5 && bmiResult <= 24.9) {
+        category = "Berat badan normal";
+        textColor = "green";
+      } else if (bmiResult >= 25 && bmiResult <= 29.9) {
+        category = "Berat badan berlebih (overweight)";
+        textColor = "orange";
+      } else {
+        category = "Obesitas";
+        textColor = "red";
+      }
+
       bmiContent = `
             <div class="bmi-container">
             <div class="bmi-bar">
@@ -183,8 +199,8 @@ calculate.addEventListener("click", function () {
             <p class="mt-5">
               Your BMI is <strong>${parseFloat(bmiResult).toFixed(
                 2
-              )}/m<sup>2</sup></strong> and it's
-              <span style="color: #0be881; font-weight: bold">Normal</span>.
+              )}kg/m<sup>2</sup></strong> and it's
+              <span style="color: ${textColor}; font-weight: bold">${category}</span>.
             </p>
           </div>`;
 
