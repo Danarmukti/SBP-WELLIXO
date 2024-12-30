@@ -1,0 +1,212 @@
+{
+  "makanan_tinggi_kalori": {
+    "karbohidrat_kompleks": [
+      {
+        "nama": "Nasi Putih",
+        "jumlah": "100g",
+        "kalori": 130,
+        "karbohidrat": 28,
+        "protein": 2.7,
+        "serat": 0.4,
+        "manfaat": "Sumber energi utama, mudah dicerna"
+      },
+      {
+        "nama": "Kentang",
+        "jumlah": "100g",
+        "kalori": 77,
+        "karbohidrat": 17,
+        "protein": 2,
+        "serat": 2.2,
+        "vitamin_C": 19.7,
+        "manfaat": "Kaya mineral dan vitamin B"
+      },
+      {
+        "nama": "Ubi Jalar",
+        "jumlah": "100g",
+        "kalori": 86,
+        "karbohidrat": 20,
+        "protein": 1.6,
+        "serat": 3,
+        "manfaat": "Tinggi antioksidan"
+      }
+    ],
+    "protein_hewani": [
+      {
+        "nama": "Dada Ayam",
+        "jumlah": "100g",
+        "kalori": 165,
+        "protein": 31,
+        "lemak": 3.6,
+        "zat_besi": 1,
+        "manfaat": "Pembentukan massa otot"
+      },
+      {
+        "nama": "Telur Ayam",
+        "jumlah": "1 butir besar",
+        "kalori": 70,
+        "protein": 6,
+        "lemak": 5,
+        "kolesterol": 186,
+        "vitamin_D": true,
+        "vitamin_B12": true,
+        "selenium": true,
+        "manfaat": "Protein lengkap, nutrisi otak"
+      },
+      {
+        "nama": "Ikan Salmon",
+        "jumlah": "100g",
+        "kalori": 208,
+        "protein": 22,
+        "lemak": 13,
+        "omega_3": 2.3,
+        "vitamin_D": true,
+        "vitamin_B12": true,
+        "manfaat": "Lemak sehat, anti-inflamasi"
+      }
+    ],
+    "protein_nabati": [
+      {
+        "nama": "Tempe",
+        "jumlah": "100g",
+        "kalori": 192,
+        "protein": 20,
+        "lemak": 11,
+        "serat": 1.4,
+        "manfaat": "Protein nabati lengkap, probiotik"
+      },
+      {
+        "nama": "Kacang Tanah",
+        "jumlah": "100g",
+        "kalori": 567,
+        "protein": 26,
+        "lemak": 49,
+        "serat": 8.5,
+        "vitamin_E": true,
+        "vitamin_B3": true,
+        "manfaat": "Tinggi kalori dan protein"
+      },
+      {
+        "nama": "Tahu",
+        "jumlah": "100g",
+        "kalori": 76,
+        "protein": 8,
+        "lemak": 4.8,
+        "kalsium": 350,
+        "manfaat": "Rendah kalori, tinggi protein"
+      }
+    ],
+    "lemak_sehat": [
+      {
+        "nama": "Alpukat",
+        "jumlah": "100g",
+        "kalori": 160,
+        "lemak": 14.7,
+        "serat": 6.7,
+        "vitamin_K": 21,
+        "manfaat": "Lemak sehat, antioksidan"
+      },
+      {
+        "nama": "Minyak Zaitun",
+        "jumlah": "1 sdm",
+        "kalori": 119,
+        "lemak": 13.5,
+        "vitamin_E": 1.9,
+        "manfaat": "Lemak sehat, anti-inflamasi"
+      },
+      {
+        "nama": "Kacang Almond",
+        "jumlah": "100g",
+        "kalori": 579,
+        "protein": 21,
+        "lemak": 49,
+        "serat": 12.5,
+        "vitamin_E": true,
+        "magnesium": true,
+        "manfaat": "Tinggi kalori, nutrisi otak"
+      }
+    ],
+    "produk_susu": [
+      {
+        "nama": "Susu Full Cream",
+        "jumlah": "250ml",
+        "kalori": 160,
+        "protein": 8,
+        "lemak": 8.8,
+        "kalsium": 300,
+        "vitamin_D": true,
+        "manfaat": "Nutrisi lengkap"
+      },
+      {
+        "nama": "Yogurt Greek",
+        "jumlah": "100g",
+        "kalori": 130,
+        "protein": 9,
+        "lemak": 10,
+        "kalsium": 115,
+        "probiotik": true,
+        "manfaat": "Protein tinggi, kesehatan pencernaan"
+      },
+      {
+        "nama": "Keju Cheddar",
+        "jumlah": "100g",
+        "kalori": 403,
+        "protein": 25,
+        "lemak": 33,
+        "kalsium": 720,
+        "vitamin_B12": true,
+        "manfaat": "Tinggi protein dan kalsium"
+      }
+    ],
+    "buah_buahan": [
+      {
+        "nama": "Pisang",
+        "jumlah": "1 buah sedang",
+        "kalori": 105,
+        "karbohidrat": 27,
+        "kalium": 422,
+        "vitamin_B6": true,
+        "manfaat": "Energi cepat, elektrolit"
+      },
+      {
+        "nama": "Kurma",
+        "jumlah": "100g",
+        "kalori": 282,
+        "karbohidrat": 75,
+        "serat": 8,
+        "kalium": 696,
+        "manfaat": "Tinggi kalori dan mineral"
+      },
+      {
+        "nama": "Mangga",
+        "jumlah": "1 buah sedang",
+        "kalori": 150,
+        "karbohidrat": 37,
+        "vitamin_C": 60,
+        "vitamin_A": true,
+        "manfaat": "Tinggi vitamin, antioksidan"
+      }
+    ]
+  },
+  "tips_konsumsi": {
+    "kombinasi_makanan": [
+      "Gabungkan protein dengan karbohidrat setiap makan",
+      "Tambahkan lemak sehat ke dalam setiap makanan",
+      "Konsumsi minimal 3 jenis makanan berbeda setiap kali makan"
+    ],
+    "frekuensi_makan": [
+      "Makan utama 3 kali sehari",
+      "Tambahkan 2-3 kali snack",
+      "Jarak antar makan 2-3 jam"
+    ],
+    "porsi": [
+      "Mulai dengan porsi normal",
+      "Tingkatkan porsi secara bertahap",
+      "Prioritaskan makanan padat nutrisi"
+    ],
+    "cairan": [
+      "Minum minimal 8 gelas air sehari",
+      "Konsumsi susu full cream 2-3 kali sehari",
+      "Hindari minum terlalu banyak sebelum makan"
+    ]
+  }
+}

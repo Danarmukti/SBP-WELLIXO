@@ -184,9 +184,9 @@ div.content p {
 } */
 
 .bmi-container {
+  width: 100%;
   margin: 50px auto;
   text-align: center;
-  max-width: 600px;
 }
 
 .bmi-bar {
@@ -197,12 +197,12 @@ div.content p {
   background: linear-gradient(
     to right,
     #ff5e57 0%,
-    #ff5e57 20%,
-    /* Underweight */ #0be881 20%,
-    #0be881 40%,
-    /* Normal */ #ffc312 40%,
-    #ffc312 60%,
-    /* Overweight */ #ff5e57 60%,
+    #ff5e57 22%,
+    /* Underweight */ #0be881 22%,
+    #0be881 30%,
+    /* Normal */ #ffc312 30%,
+    #ffc312 40%,
+    /* Overweight */ #ff5e57 40%,
     #ff5e57 100% /* Obese */
   );
 }
@@ -210,7 +210,7 @@ div.content p {
 .bmi-pointer {
   position: absolute;
   top: -10px;
-  left: 21%; /* Adjust based on your BMI value (example: 20.4%) */
+  left: 25%; /* Adjust based on your BMI value (example: 20.4%) */
   width: 10px;
   height: 40px;
   background-color: #2d2d2d;
@@ -225,7 +225,6 @@ div.content p {
 .bmi-value {
   position: absolute;
   top: 30px;
-  left: 120px;
   background-color: #3d3d3d;
   color: #fff;
   padding: 2px 5px;

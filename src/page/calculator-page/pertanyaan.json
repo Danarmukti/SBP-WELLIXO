@@ -30,7 +30,7 @@
           "id": 4,
           "pertanyaan": "Apa jenis kelamin Anda?",
           "tipe": "pilihan",
-          "opsi": ["Laki-laki", "Perempuan", "Lainnya"]
+          "opsi": ["Laki-laki", "Perempuan"]
         },
         {
           "id": 5,
