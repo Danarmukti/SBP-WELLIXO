@@ -133,15 +133,20 @@ actifity.addEventListener("click", () => {
 });
 // ACTIVITY INTERACTIVE
 
-let pounds = parseFloat(document.getElementById("pounds"));
+// Update variabel input
+let pounds = document.getElementById("pounds");
 let kg = document.getElementById("kg");
 let cm = document.getElementById("cm");
-let inchNumber = parseFloat(document.getElementById("inch"));
+let inch = document.getElementById("inch");
 let age = document.getElementById("age");
-let feet = parseFloat(document.getElementById("feet"));
-let inch = inchNumber.value;
+let feet = document.getElementById("feet");
 
-let inches = feet.value + inch / 12;
+// Update untuk menghitung total inch
+function getInches() {
+  let feetValue = parseFloat(feet.value) || 0;
+  let inchValue = parseFloat(inch.value) || 0;
+  return feetValue * 12 + inchValue;
+}
 
 // var keterangan
 const bmi = document.querySelector(".bmi-content");
@@ -149,49 +154,46 @@ const calorie = document.querySelector(".calorie-content");
 const exercise = document.querySelector(".exercise-content");
 
 const bar = document.querySelector(".bmi-value");
-
+let bmiResult = 0.0;
 let bmiContent = ``;
 let exerciseContent = ``;
 let calorieContent = ``;
+let bmrResult = 0.0;
 
-// CALCULATE
+// Update fungsi calculate
 calculate.addEventListener("click", function () {
-  if (unitsmeter === "us") {
-    if (inch == 0 && feet.value == 0 && age.value == 0 && pounds.value == 0) {
-      alert("masukan angka");
-      console.log("us");
-    } else {
-      bmiCalculate();
-      bmrCalculate();
-      tdee();
-    }
+  // Pastikan nilai tidak kosong
+  if (
+    (unitsmeter === "us" &&
+      (!pounds.value || !feet.value || !inch.value || !age.value)) ||
+    (unitsmeter === "metric" && (!kg.value || !cm.value || !age.value))
+  ) {
+    alert("Harap isi semua bidang input!");
+    return;
   }
-  if (unitsmeter === "metric") {
-    if (kg.value == 0 && cm.value == 0 && age.value == 0) {
-      alert("masukan angka");
-      console.log("metric");
-    } else {
-      bmiCalculate();
-      bmrCalculate();
-      tdee();
 
-      let category = "";
-      let textColor = "";
-      if (bmiResult < 18.5) {
-        category = "Berat badan kurang";
-        textColor = "red";
-      } else if (bmiResult >= 18.5 && bmiResult <= 24.9) {
-        category = "Berat badan normal";
-        textColor = "green";
-      } else if (bmiResult >= 25 && bmiResult <= 29.9) {
-        category = "Berat badan berlebih (overweight)";
-        textColor = "orange";
-      } else {
-        category = "Obesitas";
-        textColor = "red";
-      }
+  let category = "";
+  let textColor = "";
+  if (bmiResult < 18.5) {
+    category = "Berat badan kurang";
+    textColor = "red";
+  } else if (bmiResult >= 18.5 && bmiResult <= 24.9) {
+    category = "Berat badan normal";
+    textColor = "green";
+  } else if (bmiResult >= 25 && bmiResult <= 29.9) {
+    category = "Berat badan berlebih (overweight)";
+    textColor = "orange";
+  } else {
+    category = "Obesitas";
+    textColor = "red";
+  }
 
-      bmiContent = `
+  // Hitung BMI, BMR, dan TDEE
+  bmiCalculate();
+  bmrCalculate();
+  tdee();
+
+  bmiContent = `
             <div class="bmi-container">
             <div class="bmi-bar">
               <span class="bmi-value">${parseFloat(bmiResult).toFixed(2)}</span>
@@ -204,13 +206,13 @@ calculate.addEventListener("click", function () {
             </p>
           </div>`;
 
-      calorieContent = `<div class="container">
+  calorieContent = `<div class="container">
                 <h6 class="text-center">
                   This is how much you need to eat a day:
                 </h6>
                 <div class="row mt-4">
                   <div
-                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                    class="col-md-6 border border-success text-center mb-2 mb-md-0 rounded-4"
                   >
                     <button class="btn btn-primary btn-block">
                       Gain Weight
@@ -230,7 +232,7 @@ calculate.addEventListener("click", function () {
                 </div>
                 <div class="row mt-4">
                   <div
-                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                    class="col-md-6 border border-success text-center mb-2 mb-md-0 rounded-4"
                   >
                     <button class="btn btn-primary btn-block">
                       Maintain Weight
@@ -249,7 +251,7 @@ calculate.addEventListener("click", function () {
                 </div>
                 <div class="row mt-4">
                   <div
-                    class="col-md-6 border text-center mb-2 mb-md-0 rounded-4"
+                    class="col-md-6 border border-success text-center mb-2 mb-md-0 rounded-4"
                   >
                     <button class="btn btn-primary btn-block">
                       Lose Weight
@@ -269,124 +271,73 @@ calculate.addEventListener("click", function () {
                 </div>
               </div>`;
 
-      bmi.innerHTML = bmiContent;
-      calorie.innerHTML = calorieContent;
-    }
-  }
+  bmi.innerHTML = bmiContent;
+  calorie.innerHTML = calorieContent;
+
+  // Update tampilan
+  console.log("BMI:", bmiResult);
+  console.log("BMR:", bmrResult);
+  console.log("TDEE:", tdeeResult);
 });
 
-let bmrResult = 0.0;
-
-//formula metric
-/*  Pria:
-BMR= 10×berat badan(kg)+6.25×tinggi badan (cm)−5×usia (tahun)+5
-
-Wanita:
-BMR=10×berat badan (kg)+6.25×tinggi badan (cm)−5×usia (tahun)−161
-
-*/
-//formula us
-/*  Pria:
-BMR=66+(6.23×berat (lb))+(12.7×tinggi (in))−(6.8×usia)
-
-Wanita:
-BMR=655+(4.35×berat (lb))+(4.7×tinggi (in))−(4.7×usia)
-
-*/
-
+// Update fungsi bmrCalculate
 function bmrCalculate() {
-  if (unitsmeter == "us") {
-    if (gendereveal == "men") {
-      bmrResult = 66 + 6.23 * pounds.value + 12.7 * inches - 6.8 * age.value;
-    }
-  }
-  if (unitsmeter == "metric") {
-    if (gendereveal == "men") {
-      bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value + 5;
-      console.log(bmrResult);
-    }
-  }
-  if (unitsmeter == "us") {
-    if (gendereveal == "female") {
-      bmrResult = 655 + 6.23 * pounds.value + 4.7 * inches - 4.7 * age.value;
-      console.log(parseInt(bmrResult));
-    }
-  }
-  if (unitsmeter == "metric") {
-    if (gendereveal == "female") {
-      bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value - 161;
-      console.log(bmrResult);
-    }
+  let weight =
+    unitsmeter === "us" ? parseFloat(pounds.value) : parseFloat(kg.value);
+  let height = unitsmeter === "us" ? getInches() : parseFloat(cm.value);
+  let userAge = parseFloat(age.value);
+
+  if (isNaN(weight) || isNaN(height) || isNaN(userAge)) {
+    alert("Masukkan angka yang valid untuk berat, tinggi, dan usia!");
+    return;
   }
 
-  return parseInt(bmrResult);
-}
-
-// function bmrCalculate() {
-//   if (unitsmeter == "us") {
-//     if (gendereveal == "men") {
-//       bmrResult = parseFloat(
-//         66 + 6.23 * pounds.value + 12.7 * inches - 6.8 * age.value
-//       );
-//     }
-//     if (gendereveal == "Female") {
-//       if (isNaN(pounds.value) || isNaN(inches) || isNaN(age.value)) {
-//         console.log("Invalid input values. Please enter valid numbers.");
-//         return;
-//       }
-//       bmrResult = parseFloat(
-//         655 + 6.23 * pounds.value + 4.7 * inches - 4.7 * age.value
-//       );
-//     }
-//     console.log(parseFloat(bmrResult));
-//   }
-//   if (unitsmeter == "metric") {
-//     if (gendereveal == "men") {
-//       if (isNaN(kg.value) || isNaN(cm.value) || isNaN(age.value)) {
-//         console.log("Invalid input values. Please enter valid numbers.");
-//         return;
-//       }
-//       bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value + 5;
-//     }
-//     if (gendereveal == "Female") {
-//       if (isNaN(kg.value) || isNaN(cm.value) || isNaN(age.value)) {
-//         console.log("Invalid input values. Please enter valid numbers.");
-//         return;
-//       }
-//       bmrResult = 10 * kg.value + 6.25 * cm.value - 5 * age.value;
-//     }
-//     console.log(bmrResult);
-//   }
-//   return bmrResult;
-// }
-
-let tdeeResult;
-
-function tdee() {
-  if (actifityname == "sedentary") {
-    tdeeResult = bmrResult * 1.2;
-  } else if (actifityname == "moderate") {
-    tdeeResult = bmrResult * 1.55;
-    console.log(tdeeResult);
-  } else if (actifityname == "active") {
-    tdeeResult = bmrResult * 1.9;
-    console.log(tdeeResult);
-  }
-  return parseFloat(tdeeResult);
-}
-
-let bmiResult;
-
-function bmiCalculate() {
-  if (unitsmeter == "us") {
-    bmiResult = (parseFloat(pounds.value) * 703) / inches ** 2;
-    console.log(bmiResult);
-  } else if (unitsmeter == "metric") {
-    bmiResult = kg.value / (cm.value / 100) ** 2;
-    console.log(bmiResult);
+  if (unitsmeter === "us") {
+    bmrResult =
+      gendereveal === "men"
+        ? 66 + 6.23 * weight + 12.7 * height - 6.8 * userAge
+        : 655 + 4.35 * weight + 4.7 * height - 4.7 * userAge;
   } else {
-    alert("Invalid");
+    bmrResult =
+      gendereveal === "men"
+        ? 10 * weight + 6.25 * height - 5 * userAge + 5
+        : 10 * weight + 6.25 * height - 5 * userAge - 161;
   }
+  return bmrResult;
+}
+
+let tdeeResult = 0.0;
+
+// Update fungsi tdee
+function tdee() {
+  if (!bmrResult) {
+    alert("Harap hitung BMR terlebih dahulu!");
+    return;
+  }
+
+  if (actifityname === "sedentary") {
+    tdeeResult = bmrResult * 1.2;
+  } else if (actifityname === "moderate") {
+    tdeeResult = bmrResult * 1.55;
+  } else if (actifityname === "active") {
+    tdeeResult = bmrResult * 1.9;
+  }
+  return tdeeResult;
+}
+
+// Update fungsi bmiCalculate
+function bmiCalculate() {
+  let weight =
+    unitsmeter === "us" ? parseFloat(pounds.value) : parseFloat(kg.value);
+  let height = unitsmeter === "us" ? getInches() : parseFloat(cm.value) / 100;
+
+  if (isNaN(weight) || isNaN(height) || height <= 0) {
+    alert("Masukkan angka yang valid untuk berat dan tinggi badan!");
+    return;
+  }
+
+  bmiResult =
+    unitsmeter === "us" ? (weight * 703) / height ** 2 : weight / height ** 2;
   return bmiResult;
 }
 // CALCULATE

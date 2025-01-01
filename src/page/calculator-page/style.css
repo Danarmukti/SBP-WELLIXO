@@ -255,3 +255,7 @@ div.content p {
 .accordion-button:focus {
   background: var(--secondary-color);
 }
+
+.border-1 {
+  border: 10px solid var(--tertiary-color);
+}
