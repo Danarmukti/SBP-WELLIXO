@@ -259,3 +259,13 @@ div.content p {
 .border-1 {
   border: 10px solid var(--tertiary-color);
 }
+
+.button-choose {
+  border: 0px;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  transition: 0.2s all ease-in-out;
+}
+.button-choose:hover {
+  background: var(--tertiary-color);
+}

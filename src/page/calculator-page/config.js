@@ -152,6 +152,7 @@ function getInches() {
 const bmi = document.querySelector(".bmi-content");
 const calorie = document.querySelector(".calorie-content");
 const exercise = document.querySelector(".exercise-content");
+const diet = document.querySelector(".diet-content");
 
 const bar = document.querySelector(".bmi-value");
 let bmiResult = 0.0;
@@ -159,6 +160,11 @@ let bmiContent = ``;
 let exerciseContent = ``;
 let calorieContent = ``;
 let bmrResult = 0.0;
+const btnLoseWeight = document.getElementById("button-loseWeight");
+const btnMaintain = document.getElementById("button-maintain");
+const btnGain = document.getElementById("button-gain");
+
+let chooseDietPlan = "";
 
 // Update fungsi calculate
 calculate.addEventListener("click", function () {
@@ -186,6 +192,444 @@ calculate.addEventListener("click", function () {
   } else {
     category = "Obesitas";
     textColor = "red";
+  }
+  let dietContent = "";
+
+  btnLoseWeight.addEventListener("click", function () {
+    chooseDietPlan = "lose weight";
+    console.log(chooseDietPlan);
+    dietContent = `<h6 class="text-center mb-4 text-center">
+                  We recommend you this Diet plan to Lose your Weight:
+                </h6>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Breakfast (07:00 - 08:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Oatmeal dengan irisan buah (pisang/apel) dan taburan chia seed.
+                        </li>
+                        <li>
+                         Telur rebus atau orak-arik dengan sedikit minyak zaitun.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Pagi (10:00 - 11:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul  style="list-style: disc;">
+                        <li>
+                          Segenggam kacang almond atau 1 buah kecil (apel/jeruk).
+                        </li>
+                        
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Lunch | Makan Siang (12:00 - 13:00)</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Nasi merah/ubi (1/2 porsi), dada ayam panggang/rebus, dan sayuran kukus.
+                        </li>
+                        <li>
+                          Tambahkan sedikit minyak zaitun atau perasan lemon untuk rasa.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Sore (15:00 - 16:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Greek yogurt rendah lemak dengan buah beri atau 1 potong kecil dark chocolate (minimal 70% cocoa).
+                        </li>
+                       
+
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Dinner (18:00 - 19:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Salad sayuran dengan dada ayam panggang atau tahu/tempe.
+                        </li>
+                        <li>
+                     Hindari karbohidrat berat di malam hari.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary mb-4 h-75 align-items-center justify-content-center">
+                      <h5>Snack Malam (21:00 - 22:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Segelas teh hijau tanpa gula atau infused water. Jika lapar, tambahkan 1 buah kecil seperti kiwi atau jeruk.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class=" mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <h6>Tips</h6>
+                        <li class="ms-md-5">
+                          Gunakan piring kecil untuk membantu mengontrol jumlah makanan.
+                        </li >
+                        <li class="ms-md-5">
+                          Hindari makan berlebihan, meskipun itu makanan sehat.
+                        </li >
+                        <li class="ms-md-5">
+                        Beri jeda sekitar 2-3 jam sebelum tidur untuk membantu pencernaan.
+                        </li>
+                        <li class="ms-md-5">
+                  Kurangi makanan olahan dan cepat saji yang tinggi gula, garam, dan lemak jenuh.
+                        </li>
+                        <li class="ms-md-5">
+                 Kombinasikan pola makan sehat dengan olahraga, seperti jalan kaki, jogging, atau angkat beban.
+
+                        </li>
+                        <li class="ms-md-5">
+                 Minum segelas air sebelum makan untuk mengurangi rasa lapar berlebih.
+
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>`;
+    diet.innerHTML = dietContent;
+  });
+  btnMaintain.addEventListener("click", function () {
+    chooseDietPlan = "maintain weight";
+    console.log(chooseDietPlan);
+    dietContent = `<h6 class="text-center mb-4 text-center">
+                  We recommend you this Diet plan to Maintain your Weight:
+                </h6>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Breakfast (07:00 - 08:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Oatmeal dengan susu rendah lemak, irisan buah, dan taburan chia seed.
+                        </li>
+                        <li>
+                         Alternatif: 2 roti gandum dengan selai kacang dan 1 telur rebus.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Pagi (10:00 - 11:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul  style="list-style: disc;">
+                        <li>
+                          Alternatif: 2 roti gandum dengan selai kacang dan 1 telur rebus.
+                        </li>
+                        
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Lunch | Makan Siang (12:00 - 13:00)</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Nasi merah (1 porsi sedang), ayam/daging tanpa lemak/ikan panggang, dan sayuran kukus/tumis.
+                        </li>
+                        <li>
+                          Tambahkan sedikit minyak zaitun untuk lemak sehat.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Sore (15:00 - 16:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Greek yogurt rendah lemak dengan madu atau buah beri.
+                        </li>
+                        <li>
+                          Alternatif: Smoothie buah dengan susu almond.
+                        </li>
+
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Dinner (18:00 - 19:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Porsi kecil karbohidrat kompleks (nasi merah/kentang), protein (ikan/tahu), dan sayuran segar.
+                        </li>
+                        <li>
+                       Hindari makanan tinggi gula dan lemak menjelang malam.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary mb-4 h-75 align-items-center justify-content-center">
+                      <h5>Snack Malam (21:00 - 22:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Segelas susu rendah lemak atau infused water jika merasa lapar.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class=" mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <h6>Tips</h6>
+                        <li class="ms-md-5">
+                          Jangan terlalu banyak atau terlalu sedikit, sesuaikan dengan tingkat aktivitas harianmu.
+                        </li >
+                        <li class="ms-md-5">
+                          Lakukan olahraga ringan seperti berjalan, yoga, atau aktivitas fisik lainnya untuk menjaga kebugaran.
+                        </li >
+                        <li class="ms-md-5">
+                         Pastikan kalori yang masuk sama dengan kalori yang keluar.
+                        </li>
+                      
+                        <li class="ms-md-5">
+                  Serat membantu menjaga kenyang lebih lama, dan air penting untuk metabolisme tubuh.
+                        </li>
+                        <li class="ms-md-5">
+                 Sesekali nikmati makanan favoritmu (cheat day) untuk menghindari kejenuhan.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>`;
+
+    diet.innerHTML = dietContent;
+  });
+  btnGain.addEventListener("click", function () {
+    chooseDietPlan = "Gain weight";
+    console.log(chooseDietPlan);
+    dietContent = `<h6 class="text-center mb-4 text-center">
+                  We recommend you this Diet plan to Gain your Weight:
+                </h6>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Breakfast (07:00 - 08:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Oatmeal dengan susu full fat, irisan pisang, dan madu.
+                        </li>
+                        <li>
+                          Telur rebus/goreng dan roti gandum dengan selai kacang.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Pagi (10:00 - 11:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul  style="list-style: disc;">
+                        <li>
+                          Segenggam kacang-kacangan atau smoothie buah tinggi kalori.
+                        </li>
+                        
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Lunch | Makan Siang (12:00 - 13:00)</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Nasi merah dengan ayam panggang, tempe, dan sayuran hijau.
+                        </li>
+                        <li>
+                          Tambahkan 1 sendok makan minyak zaitun ke sayuran.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Snack Sore (15:00 - 16:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                          Greek yogurt dengan granola dan buah-buahan.
+                        </li>
+                        <li>
+                          Sandwich isi alpukat dan keju.
+                        </li>
+
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Dinner (18:00 - 19:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Nasi, ikan panggang, tahu, atau daging tanpa lemak.
+                        </li>
+                        <li>
+                       Sayuran tumis atau kukus.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary mb-4 h-75 align-items-center justify-content-center">
+                      <h5>Snack Malam (21:00 - 22:00) </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <li>
+                         Segelas susu hangat atau protein shake dengan selai kacang.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class=" mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <h6>Tips</h6>
+                        <li class="ms-md-5">
+                          Makan lebih sering: 5–6 kali sehari dalam porsi kecil hingga sedang.
+                        </li >
+                        <li class="ms-md-5">
+                          Tambahkan kalori secara bertahap agar tubuh bisa beradaptasi.
+                        </li >
+                        <li class="ms-md-5">
+                          Kombinasikan makanan berkalori tinggi dengan aktivitas olahraga seperti angkat beban untuk meningkatkan massa otot, bukan lemak.
+                        </li>
+                        <li class="ms-md-5">
+                          Hindari makanan cepat saji yang hanya menambah lemak tidak sehat.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>`;
+
+    diet.innerHTML = dietContent;
+  });
+
+  if (chooseDietPlan == "lose weight") {
+    dietContent = ``;
+  } else if (chooseDietPlan == "maintain weight") {
+    dietContent = ``;
+  } else if (chooseDietPlan == "Gain weight") {
   }
 
   // Hitung BMI, BMR, dan TDEE
@@ -273,6 +717,7 @@ calculate.addEventListener("click", function () {
 
   bmi.innerHTML = bmiContent;
   calorie.innerHTML = calorieContent;
+  diet.innerHTML = dietContent;
 
   // Update tampilan
   console.log("BMI:", bmiResult);
