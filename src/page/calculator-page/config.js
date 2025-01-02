@@ -163,6 +163,9 @@ let bmrResult = 0.0;
 const btnLoseWeight = document.getElementById("button-loseWeight");
 const btnMaintain = document.getElementById("button-maintain");
 const btnGain = document.getElementById("button-gain");
+const btnGainMuscle = document.getElementById("button-musclegain");
+const btnLoseFat = document.getElementById("button-loseFat");
+const btnMaintainMuscle = document.getElementById("button-maintainMuscle");
 
 let chooseDietPlan = "";
 
@@ -194,6 +197,150 @@ calculate.addEventListener("click", function () {
     textColor = "red";
   }
   let dietContent = "";
+  let exerciseContent = "";
+
+
+
+  btnGainMuscle.addEventListener("click", function () {
+    exerciseContent = `<h6 class="text-center mb-4 text-center">
+                  We recommend you this Exercise plan to Gain your Muscle mass:
+                </h6>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Strength Training (Latihan Beban)</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul class="py-4" style="list-style: disc;">
+                        <li>
+                          Squat: Membangun otot kaki dan glutes.
+                        </li>
+                        <li>
+                         Deadlift: Melatih otot punggung bawah, paha belakang, dan glutes.
+                        </li>
+                        <li>
+                         Bench Press: Untuk otot dada, bahu, dan triceps.
+                        </li>
+                        <li>
+                         Pull-Up/Chin-Up: Memperkuat punggung dan biceps
+                        </li>
+                        <li>
+                         Overhead Press: Fokus pada bahu dan triceps.
+                        </li>
+                        <li>
+                         Barbell Row: Latihan untuk punggung atas dan lengan
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Isolation Exercises</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul class="py-4"  style="list-style: disc;">
+                        <li>
+                          Biceps curl (biceps)
+                        </li>
+                        <li>
+                          Triceps extension (triceps)
+                        </li>
+                        <li>
+                          Lateral raise (bahu)
+                        </li>
+                        <li>
+                          Calf raise (betis)
+                        </li>
+                        
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Core Training</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul class="py-4" style="list-style: disc;">
+                        <li>
+                          Plank
+                        </li>
+                        <li>
+                          Hanging leg raises
+                        </li>
+                        <li>
+                          Russian twists
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Progressive Overload</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul class="py-4" style="list-style: disc;">
+                        <li>
+                          Tingkatkan beban secara bertahap untuk merangsang pertumbuhan otot.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card border-success bg-primary text-center mb-4 h-75 align-items-center justify-content-center p-2">
+                      <h5>Durasi dan Repetisi:</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul class="py-4" style="list-style: disc;">
+                        <li>
+                         Setiap latihan: 3-4 set, 8-12 repetisi (untuk hipertrofi otot).
+                        </li>
+                        <li>
+                     Istirahat antar set: 60-90 detik.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class=" mb-4 h-75 bg-primary align-items-start justify-content-center">
+                      <ul style="list-style: disc;">
+                        <h6>Tips tambahan</h6>
+                        <li class="ms-md-5">
+                          Tidur cukup: 7-9 jam per malam untuk pemulihan otot.
+                        </li >
+                        <li class="ms-md-5">
+                          Hidrasi: Minum air yang cukup, terutama selama latihan
+                        </li >
+                        <li class="ms-md-5">
+                        Catat perkembangan: Lacak beban dan repetisi untuk memantau kemajuan.
+                        </li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>`;
+    exercise.innerHTML = exerciseContent;
+  
+  });
+
 
   btnLoseWeight.addEventListener("click", function () {
     chooseDietPlan = "lose weight";
@@ -625,12 +772,6 @@ calculate.addEventListener("click", function () {
     diet.innerHTML = dietContent;
   });
 
-  if (chooseDietPlan == "lose weight") {
-    dietContent = ``;
-  } else if (chooseDietPlan == "maintain weight") {
-    dietContent = ``;
-  } else if (chooseDietPlan == "Gain weight") {
-  }
 
   // Hitung BMI, BMR, dan TDEE
   bmiCalculate();
