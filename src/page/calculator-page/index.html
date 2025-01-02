@@ -176,7 +176,22 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body bmi-content">
-                
+                <!-- BMI CONTENT -->
+                <!-- <div class="bmi-indicator">
+                  
+                  <div class="progress position-relative">
+                    <div class="progress-bar bg-danger" style="width: 25%;"></div>
+                    <div class="progress-bar bg-success" style="width: 25%;"></div>
+                    <div class="progress-bar bg-warning" style="width: 25%;"></div>
+                    <div class="progress-bar bg-danger" style="width: 50%;"></div>
+                    <div class="indicator" style="left: 20%;">
+                      <span>20.4</span>
+                    </div>
+                  </div>
+                  <p class="mt-2 text-center">
+                    Your BMI is <strong>20.4 kg/m²</strong> and it's <span class="text-success">Normal</span>.
+                  </p>
+                </div> -->
             </div>
           </div>
         </div>
@@ -258,39 +273,17 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body exercise-content">
-              <div class="container">
-                <h6 class="text-center mb-4 text-center">
-                  We recommend you this exercise to keep healthy:
-                </h6>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card mb-4 text-center">
-                      <h5>Moderate-Intensity Cardio</h5>
-                      <p>Cycling or Swimming</p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card mb-4 text-center">
-                      <h5>Jogging or Brisk Walking</h5>
-                      <p>30 minutes</p>
-                    </div>
-                  </div>
+            <div class="accordion-body">
+              <div class="row mb-4">
+                <div class="col align-items-center justify-content-center py-3 text-center">
+                 <h5>Choose your Exercise plan</h5>
+                  <button id="button-musclegain" class="button-choose px-4 py-2 me-3 mb-3 rounded-5">Gain Muscle</button>
+                  <button id="button-loseFat" class="button-choose px-4 py-2 me-3 mb-3 rounded-5">Fat loss</button>
+                  <button id="button-maintainMuscle" class="button-choose px-4 py-2 me-3 rounded-5">Maintain Muscle</button>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card mb-4 text-center">
-                      <h5>Flexibility Activities</h5>
-                      <p>Yoga or Pilates</p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card mb text-center">
-                      <h5>Strength Training</h5>
-                      <p>Weight Lifting or Bodyweight Exercises</p>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div class="container exercise-content">
+                <!-- exercise content -->
               </div>
             </div>
           </div>

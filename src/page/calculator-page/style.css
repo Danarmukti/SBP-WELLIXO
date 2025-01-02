@@ -269,3 +269,22 @@ div.content p {
 .button-choose:hover {
   background: var(--tertiary-color);
 }
+.bmi-indicator .progress {
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bmi-indicator .indicator {
+  position: absolute;
+  top: 50%; /* Menempatkan indikator di tengah vertikal */
+  transform: translate(-50%, -50%); /* Memastikan penyesuaian pusat */
+  background-color: #4a4a4a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 5; /* Agar indikator berada di atas elemen lainnya */
+}
