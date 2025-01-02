@@ -1058,18 +1058,6 @@ calculate.addEventListener("click", function () {
     // Hitung posisi indikator
     const leftPosition = ((bmiValue - minBMI) / (maxBMI - minBMI)) * 100;
 
-    // bmiContent = `
-    //           <div class="bmi-container">
-    //           <div class="bmi-bar">
-    //             <span class="bmi-value">${parseFloat(bmiResult).toFixed(2)}</span>
-    //           </div>
-    //           <p class="mt-5">
-    //             Your BMI is <strong>${parseFloat(bmiResult).toFixed(
-    //               2
-    //             )}kg/m<sup>2</sup></strong> and it's
-    //             <span style="color: ${textColor}; font-weight: bold">${category}</span>.
-    //           </p>
-    //         </div>`;
     bmiContent = `
               <div class="bmi-indicator">
   <div class="progress position-relative" style="height: 20px; border-radius: 10px; ">
